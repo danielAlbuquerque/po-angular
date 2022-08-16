@@ -135,12 +135,16 @@ export class PoRadioGroupComponent extends PoRadioGroupBaseComponent implements 
   onKeyUp(event: KeyboardEvent, value) {
     const key = event.keyCode || event.which;
 
-    if (this.isArrowKey(key)) {
+    if (this.isArrowKey(key) || this.isSpaceKey(key)) {
       this.changeValue(value);
     }
   }
 
   private isArrowKey(key: number) {
     return key >= 37 && key <= 40;
+  }
+
+  private isSpaceKey(key: number) {
+    return key === 32;
   }
 }

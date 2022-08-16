@@ -10,6 +10,8 @@ import { PoRadioGroupOption } from './po-radio-group-option.interface';
 const poRadioGroupColumnsDefaultLength: number = 6;
 const poRadioGroupColumnsTotalLength: number = 12;
 
+type PoRadioGroupSize = 'medium' | 'large';
+
 /**
  * @description
  *
@@ -152,6 +154,16 @@ export abstract class PoRadioGroupBaseComponent implements ControlValueAccessor,
   get options() {
     return this._options;
   }
+
+  /**
+   * @optional
+   *
+   * @description
+   *
+   * Define o tamanho do *radio*
+   * @default `medium`
+   */
+  @Input('p-size') size: PoRadioGroupSize = 'medium';
 
   // Função que controla quando deve ser emitido onChange e atualiza o Model
   changeValue(changedValue: any) {
