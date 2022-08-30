@@ -28,7 +28,7 @@
 
       <po-multiselect-item
         *ngFor="let option of visibleOptions"
-        [p-label]="option.label"
+        [p-label]="option[fieldLabel]"
         [p-selected]="isSelectedItem(option)"
         (p-change)="clickItem($event, option)"
       >
